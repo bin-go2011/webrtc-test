@@ -7,3 +7,4 @@ find_package(LibWebRTC REQUIRED)
 include(${LIBWEBRTC_USE_FILE})
 
 add_subdirectory(sample)
+add_subdirectory(logging)
