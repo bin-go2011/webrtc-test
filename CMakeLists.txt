@@ -8,4 +8,4 @@ include(${LIBWEBRTC_USE_FILE})
 
 add_subdirectory(sample)
 add_subdirectory(logging)
-add_subdirectory(peerconnection)
+add_subdirectory(peerconnection/server)
