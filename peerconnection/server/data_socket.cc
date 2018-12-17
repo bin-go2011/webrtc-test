@@ -54,6 +54,7 @@ WinsockInitializer WinsockInitializer::singleton;
 bool SocketBase::Create() {
   assert(!valid());
   socket_ = ::socket(AF_INET, SOCK_STREAM, 0);
+  printf("create socket %p\n", &socket_);
   return valid();
 }
 
@@ -87,6 +88,7 @@ bool DataSocket::OnDataAvailable(bool* close_socket) {
   assert(valid());
   char buffer[0xfff] = {0};
   int bytes = recv(socket_, buffer, sizeof(buffer), 0);
+    printf("Received %d: %s\n", sizeof(buffer), buffer);
   if (bytes == SOCKET_ERROR || bytes == 0) {
     *close_socket = true;
     return false;

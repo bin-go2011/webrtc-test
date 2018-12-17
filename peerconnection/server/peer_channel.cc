@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include "webrtc/examples/peerconnection/server/peer_channel.h"
+#include "peer_channel.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,8 +16,8 @@
 
 #include <algorithm>
 
-#include "webrtc/examples/peerconnection/server/data_socket.h"
-#include "webrtc/examples/peerconnection/server/utils.h"
+#include "data_socket.h"
+#include "utils.h"
 #include "webrtc/base/stringencode.h"
 #include "webrtc/base/stringutils.h"
 

@@ -86,6 +86,7 @@ int main(int argc, char** argv) {
 
     for (SocketArray::iterator i = sockets.begin(); i != sockets.end(); ++i) {
       DataSocket* s = *i;
+        printf("DataSocket %p\n", s);
       bool socket_done = true;
       if (FD_ISSET(s->socket(), &socket_set)) {
         if (s->OnDataAvailable(&socket_done) && s->request_received()) {
@@ -146,6 +147,7 @@ int main(int argc, char** argv) {
 
     if (FD_ISSET(listener.socket(), &socket_set)) {
       DataSocket* s = listener.Accept();
+      printf("New connection %p\n", s);
       if (sockets.size() >= kMaxConnections) {
         delete s;  // sorry, that's all we can take.
         printf("Connection limit reached\n");
