@@ -1,0 +1,2 @@
+add_subdirectory(libyuv)
+add_subdirectory(jsoncpp)
