@@ -16,7 +16,7 @@
 
 #include "webrtc/api/test/fakeconstraints.h"
 #include "webrtc/base/checks.h"
-#include "webrtc/base/json.h"
+#include "json.h"
 #include "webrtc/base/logging.h"
 #include "defaults.h"
 #include "webrtc/media/engine/webrtcvideocapturerfactory.h"
@@ -258,7 +258,7 @@ void Conductor::OnMessageFromPeer(int peer_id, const std::string& message) {
   std::string type;
   std::string json_object;
 
-  rtc::GetStringFromJsonObject(jmessage, kSessionDescriptionTypeName, &type);
+   rtc::GetStringFromJsonObject(jmessage, kSessionDescriptionTypeName, &type);
   if (!type.empty()) {
     if (type == "offer-loopback") {
       // This is a loopback call.
